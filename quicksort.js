@@ -5,16 +5,8 @@ function quicksort(arr) {
 
   let pivot = arr[Math.floor(arr.length / 2)];
 
-  let lower = [];
-  let greater = [];
-
-  for (const value of arr) {
-    if (value < pivot) {
-      lower.push(value);
-    } else if (value > pivot) {
-      greater.push(value);
-    }
-  }
+  let lower = arr.filter(val => val < pivot);
+  let greater = arr.filter(val => val > pivot);
 
   return [...quicksort(lower), pivot, ...quicksort(greater)];
 }
