@@ -19,4 +19,18 @@ function countX(string) {
   return countX(string.slice(1));
 }
 
-  console.log(countX('xx4xx8xx67xx'))
+console.log(countX('xx4xx8xx67xx'))
+
+function debounce(fn, wait) {
+  let timeout
+
+  return function executedFn(...args) {
+    const later = () => {
+      clearTimeout()
+      fn(...args)
+    }
+  }
+
+  clearTimeout()
+  timeout = setTimeout(later, wait)
+}
