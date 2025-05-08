@@ -2,10 +2,10 @@
 
 function flatten(arr) {
   let result = []
-  
+
   for (const item of arr) {
     if (typeof item === 'number') {
-      result = [...result, item]    
+      result = [...result, item]
     } else {
       result = [...result, ...flatten(item)]
     }
