@@ -14,6 +14,6 @@ function flatten(arr) {
   return result
 }
 
-let test = [1, 2, [1, [1, 2], 3], 9]
+let test = [1, 2, [1, [1, [5, 9], 2], 3], 9]
 
 console.log(flatten(test))

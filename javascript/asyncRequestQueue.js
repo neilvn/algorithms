@@ -12,16 +12,14 @@ class AsyncRequestQueue {
      */
     add(asyncTask) {
         this.queue.push(asyncTask);
-        // If the queue is not currently processing, start processing
-        if (!this.isProcessing) {
-            this.processNext();
-        }
+
+        if (!this.isProcessing) this.processNext();
     }
 
     async processNext() {
         if (this.queue.length === 0) {
             this.isProcessing = false;
-            return; // Queue is empty
+            return;
         }
 
         this.isProcessing = true;
@@ -40,7 +38,7 @@ class AsyncRequestQueue {
 
 // --- Example Usage ---
 
-const fakeAsyncRequest = (id, duration) => {
+function fakeAsyncRequest(id, duration) {
     return new Promise(resolve => {
         console.log(`Starting task ${id}...`);
         setTimeout(() => {
