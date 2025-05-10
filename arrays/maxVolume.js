@@ -15,12 +15,11 @@ function maxVolume(heights) {
     const currentVolume = Math.min(heights[left], heights[right]) * width
     volume = Math.max(volume, currentVolume)
 
-    if (heights[left] < heights[right]) {
-      left++
-    } else {
-      right--
-    }
+    heights[left] < heights[right]
+      ? left++
+      : right--
   }
+
   return volume
 }
 
