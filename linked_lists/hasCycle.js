@@ -20,3 +20,26 @@ function hasCycle(head) {
 
   return false
 }
+
+
+// Using constant space
+/**
+  * Constant space cycle detection
+  * @param {ListNode} head
+  * @returns {boolean}
+*/
+function hasCycleTwo(head) {
+  let fast = head
+  let slow = head
+
+  while (fast && fast.next) {
+    slow = slow.next
+    fast = fast.next.next
+    if (fast === slow) {
+      return true
+    }
+  }
+
+  return false
+}
+
