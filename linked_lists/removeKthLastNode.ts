@@ -15,7 +15,7 @@ function removeKthLast(root: ListNode, k: number): ListNode {
     if (!start) return root
   }
 
-  while (start.next) {
+   while (start.next) {
     start = start.next
     trailer = trailer.next
   }

@@ -55,7 +55,7 @@ function substringAnagrams(s, t) {
   return count
 }
 
-let s = 'caabab'
+let s = 'caabababa'
 let t = 'aba'
 
 console.log(substringAnagrams(s, t))
